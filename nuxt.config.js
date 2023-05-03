@@ -1,6 +1,6 @@
 export default {
   head: {
-    title: 'NEFA',
+    title: 'AJR Traders',
     htmlAttrs: {
       lang: 'en',
     },

@@ -1,21 +1,21 @@
 <template>
-  <div class="w-full">
-    <!-- Hero section -->
-    <section id="hero" class="w-full pb-24">
+  <div class="w-full " >
+    <!-- parte inicial-->
+    <section id="hero" class="w-full">
       <BaseSection>
         <div class="col-span-12 lg:col-span-6 mt-12 xl:mt-10 space-y-4 sm:space-y-6 px-6 text-center sm:text-left">
           <span data-aos="fade-right" data-aos-once="true" class="text-base text-gradient font-semibold uppercase"
-            >Sign Up Today</span
+            >Join Us Today</span
           >
           <h1
             data-aos="fade-right"
             data-aos-once="true"
             class="text-[2.5rem] sm:text-5xl xl:text-6xl font-bold leading-tight capitalize sm:pr-8 xl:pr-10"
           >
-            The World's <span class="text-header-gradient">Fastest Growing</span> Crypto Web App
+            The Only <span class="text-header-gradient">Indicator</span> You Will Ever Need
           </h1>
           <p data-aos="fade-down" data-aos-once="true" data-aos-delay="300" class="paragraph hidden sm:block">
-            Buy and sell 200+ cryptocurrencies with 20+ flat currencies using bank transfers or your credit/debit card.
+            The ajr_traders team offers different services and investment opportunities for you to be part of and start profiting within the community! We provide daily sharing of analysis and signals, news, tips, and more!
           </p>
           <div
             data-aos="fade-up"
@@ -26,16 +26,11 @@
             <BaseButton
               class="max-w-full px-8 py-4 bg-gradient-to-r from-[#468ef9] to-[#0c66ee] border border-[#0c66ee] text-white"
             >
-              Get Started
-            </BaseButton>
-            <BaseButton
-              class="max-w-full px-6 py-4 bg-inherit text-gradient border border-[#0c66ee] flex items-center justify-center"
-            >
-              <span>Download App</span>
-              <ChevronDownIcon :size="20" class="mt-1 text-[#0c66ee]" />
+            <NuxtLink to="/products">Get Started</NuxtLink>
             </BaseButton>
           </div>
         </div>
+        <!-- imagem direita inicio -->
         <div class="hidden sm:block col-span-12 lg:col-span-6">
           <div class="w-full">
             <img
@@ -46,6 +41,7 @@
               alt=""
             />
           </div>
+          <!-- bolinhas e assim que estão a decorar -->
         </div>
         <img
           data-aos="fade-up"
@@ -71,111 +67,6 @@
           :src="require('~/assets/img/pattern/star.png')"
           class="hidden sm:block absolute top-20 sm:top-28 right-16 lg:right-0 lg:left-[30rem] w-8"
         />
-      </BaseSection>
-    </section>
-
-    <!-- Crypto statistic section -->
-    <section
-      class="max-w-screen-xl mx-2 sm:mx-auto px-4 sm:px-6 lg:px-0 py-6 pb-20 sm:py-8 rounded-[2.25rem] sm:rounded-xl bg-white shadow-lg sm:shadow-md transform lg:-translate-y-12"
-    >
-      <div class="w-full flex flex-col lg:flex-row items-center justify-center">
-        <LandingCryptoStatistic
-          data-aos="fade-up"
-          title="🔥 Trending"
-          :datasets="trendings"
-          class="xl:border-r border-gray-200 lg:px-8"
-        />
-        <LandingCryptoStatistic
-          data-aos="fade-up"
-          data-aos-delay="150"
-          title="🚀 Top Gainers"
-          :datasets="topGainers"
-          class="xl:border-r border-gray-200 lg:px-8"
-        />
-        <LandingCryptoStatistic
-          data-aos="fade-up"
-          data-aos-delay="300"
-          title="💎 Recently Added"
-          :datasets="recents"
-          class="lg:px-8"
-        />
-      </div>
-    </section>
-
-    <!-- Buy and trade section -->
-    <section class="w-full my-24">
-      <BaseSection>
-        <LandingBuyTradeImage class="sm:hidden mb-8" />
-        <div data-aos="fade-right" class="col-span-12 lg:col-span-6 mt-4 xl:mt-20 space-y-6 px-4">
-          <h2 class="text-4xl font-semibold sm:pr-8 xl:pr-12">
-            Buy & trade on the <br class="hidden sm:block" />
-            original crypto exchange.
-          </h2>
-          <p class="paragraph">
-            Buy now and get 40% extra bonus Minimum pre-sale amount 25 Crypto Coin. We accept BTC crypto-currency
-          </p>
-          <div class="space-y-6 lg:pr-12">
-            <LandingExchange
-              title="Amount"
-              name="amount"
-              type="number"
-              default-value="5.000"
-              :exchange-selected="currencySelected"
-              :exchanges="currencies"
-            />
-            <LandingExchange
-              title="Get"
-              name="get"
-              type="number"
-              default-value="0.10901"
-              :exchange-selected="cryptoSelected"
-              :exchanges="cryptocurrencies"
-            />
-            <BaseButton class="w-full px-5 py-4 bg-blue-gradient text-white text-base font-medium">Buy Now</BaseButton>
-          </div>
-        </div>
-        <LandingBuyTradeImage data-aos="fade-left" class="hidden sm:block" />
-      </BaseSection>
-    </section>
-
-    <!-- Partners section -->
-    <section class="bg-partner relative max-w-full sm:mx-6 my-24 shadow sm:rounded-2xl overflow-hidden">
-      <div class="w-full px-6 sm:px-0 py-16 flex flex-col items-center justify-center space-y-4 text-center">
-        <h3 data-aos="flip-down" class="text-2xl text-neutral-800 font-semibold">Trusted Partners Worldwide</h3>
-        <p data-aos="flip-down" class="paragraph">We're partners with countless major organisations around the globe</p>
-        <div data-aos="fade-up" class="flex flex-wrap items-center justify-center">
-          <LandingPartnerImage
-            v-for="img in ['clever.png', 'diamon-cutts.png', 'swiss-finance.png', 'gambio.png']"
-            :key="img"
-            :img="img"
-          />
-        </div>
-      </div>
-    </section>
-
-    <!-- Credit card section -->
-    <section class="w-full my-36">
-      <BaseSection data-aos="fade-down">
-        <div class="col-span-12 lg:col-span-7">
-          <div class="w-full">
-            <img :src="require('~/assets/img/nefa-cc.webp')" class="w-[95%]" alt="" />
-          </div>
-        </div>
-        <div class="col-span-12 lg:col-span-5 space-y-6 px-4 sm:px-6 mt-20">
-          <h2 class="text-4xl font-semibold">
-            Introducing the <span class="text-header-gradient">NEFA</span> Credit Card
-          </h2>
-          <p class="paragraph">Subject to cardholder and rewards terms which will be available at application.</p>
-          <ul class="space-y-4 sm:space-y-2">
-            <LandingListItem title="Up to 3% back on purchases" />
-            <LandingListItem title="Earn rewards in bitcoin or any crypto on NEFA" />
-            <LandingListItem title="No annual fee" />
-          </ul>
-          <BaseButton
-            class="w-full sm:max-w-[240px] px-10 py-4 bg-inherit text-gradient border border-[#0c66ee] text-base"
-            >Join the waitlist</BaseButton
-          >
-        </div>
       </BaseSection>
     </section>
 
@@ -258,7 +149,7 @@
     <section class="bg-trading-tools relative max-w-full sm:mx-4 xl:mx-10 my-24 shadow sm:rounded-2xl overflow-hidden">
       <div class="w-full py-16 flex flex-col items-center">
         <h2 data-aos="flip-down" class="text-3xl sm:text-4xl font-semibold text-center">
-          Get started in just a few minutes
+          The easiest way to reach your goals
         </h2>
         <div
           data-aos="fade-up"
@@ -447,22 +338,22 @@ export default {
       ],
       accordions: [
         {
-          title: 'Why should I choose NEFA?',
+          title: 'Why should I trust AJR?',
           description:
             "We're industry pioneers, having been in the cryptocurrency industry since 2016. We've facilitated more than 21 billion USD worth of transactions on our exchange for customers in over 40 countries. Today, we're trusted by over 8 million customers around the world and have received praise for our easy-to-use app, secure wallet, and range of features.",
         },
         {
-          title: 'How secure is NEFA?',
+          title: 'How can I pay?',
           description:
             "We're industry pioneers, having been in the cryptocurrency industry since 2016. We've facilitated more than 21 billion USD worth of transactions on our exchange for customers in over 40 countries. Today, we're trusted by over million customers around the world and have received praise for our easy-to-use app, secure wallet, and range of features.",
         },
         {
-          title: 'Do I have to buy a whole Bitcoin?',
+          title: 'Do I have to buy the Indicator?',
           description:
             "We're industry pioneers, having been in the cryptocurrency industry since 2016. We've facilitated more than 21 billion USD worth of transactions on our exchange for customers in over 40 countries. Today, we're trusted by over million customers around the world and have received praise for our easy-to-use app, secure wallet, and range of features.",
         },
         {
-          title: 'How do I actually buy Bitcoin?',
+          title: 'How do I actually use the Indicator?',
           description:
             "We're industry pioneers, having been in the cryptocurrency industry since 2016. We've facilitated more than 21 billion USD worth of transactions on our exchange for customers in over 40 countries. Today, we're trusted by over million customers around the world and have received praise for our easy-to-use app, secure wallet, and range of features.",
         },
@@ -470,21 +361,21 @@ export default {
       steps: [
         {
           img: 'sign-up.png',
-          title: 'Sign Up',
+          title: 'Buy Our Products',
           description:
-            'Sign up for your free NEFA Wallet on web, iOS or Android and follow our easy process to set up your profile',
+            'Choose one of our various offers depending on your interest',
         },
         {
           img: 'fund.png',
-          title: 'Fund',
+          title: 'Follow Our Tips',
           description:
-            'Choose your preferred payment method such as bank transfer or credit card to top up your NEFA Wallet',
+            'Use our tips and indicatores in real time with ...',
         },
         {
           img: 'buy-crypto.png',
-          title: 'Buy Crypto',
+          title: 'Get The Results',
           description:
-            'Buy Bitcoin or Ethereum, then securely store it in your Wallet or send it on easily to your friends anywhere',
+            'Over 80% WR with a guarantee of money back if the monthly results are below 50% WR',
         },
       ],
     }
@@ -498,17 +389,9 @@ export default {
   background-clip: text;
   -webkit-text-fill-color: transparent;
 }
-.bg-partner {
-  background: url('../assets/img/partner/background.png');
-  background-size: cover;
-  background-position: center;
-}
 .bg-trading-tools {
   background: url('../assets/img/bg-trading-tools.webp');
   background-size: cover;
   background-position: center;
-}
-.max-h-0 {
-  max-height: 0;
 }
 </style>
